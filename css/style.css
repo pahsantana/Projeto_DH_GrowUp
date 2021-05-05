@@ -11,14 +11,13 @@ body {
     color: #9B9B9B;
 }
 
-
 header {
+    background-color: #00796B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: fixed;
     width: 100%;
-    background-color: #00796B;
     top: 0;
     left: 0;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 2;
 }
 
@@ -39,12 +38,6 @@ header nav ul li {
     padding: 10px;
 }
 
-header nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-}
-
 header nav ul li a:after {
     content: '';
     width: 0%;
@@ -58,49 +51,19 @@ header nav ul li:hover a:after {
     width: 100%;
 }
 
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
 .container {
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }
 
-main {
-    min-height: 80vh;
-    margin-top: 150px;
-}
-
-.cabecalho {
-    width: 1280px;
-    height: 80px;
-    background-color: #00796B;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    margin-left: 41px;
-}
-
-.texto {
-    display: block;
-    align-items: center;
-    justify-content: center;
-}
-
-.container {
-    display: flex;
-    align-content: space-between;
-}
-
-.imagem {
-    width: 770px;
-    height: 443px;
-    left: -21px;
-    top: 237px;
-}
-
-.texto h3 {
+.texto h2 {
     width: 516px;
     height: 120px;
     left: 721px;
@@ -111,6 +74,7 @@ main {
     font-size: 30px;
     line-height: 47px;
     color: #009688;
+    text-transform: uppercase;
 }
 
 .texto p {
@@ -142,24 +106,136 @@ main {
     background-color: #61b6ac;
 }
 
-footer {
-    width: 100%;
-    height: 85px;
-    left: 0px;
-    top: 723px;
-    background: #C4C4C4;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+main {
+    min-height: 80vh;
+    margin-top: 150px;
 }
 
-footer p {
+section.banner {
+    padding: 50px;
+}
+
+section.banner .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
     text-align: center;
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    color: #FFFFFF;
+    background-color: #C4C4C4;
+    padding: 10px;
+}
+
+/* SOBRE */
+section.introducao-sobre {
+    padding: 50px 0;
+}
+
+section.introducao-sobre h1 {
+    color: #00796B;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.introducao-sobre .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.video-sobre iframe {
+    width: 100%;
+    height: 600px;
+}
+
+section.missao-visao-valores {
+    text-align: center;
+}
+
+section.missao-visao-valores article h2 {
+    font-size: 30px;
+    color: #00796B;
+    text-transform: uppercase;
+}
+
+section.missao-visao-valores article {
+    padding: 15px 30px;
+}
+
+/* SERVIÇOS */
+section.desenvolvimento .container,
+section.marketing .container,
+section.consultoria-ux .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+section.marketing .container {
+    flex-direction: row-reverse;
+}
+
+main h1 {
+    color: #00796B;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+/* CONTATO */
+
+.contato {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contato form input:not([type="radio"]):not([type="checkbox"]),
+.contato form textarea,
+.contato form select {
+    width: 100%;
+    padding: 5px;
+}
+
+.contato form input:not([type="radio"]):not([type="checkbox"]):focus,
+.contato form textarea:focus,
+.contato form select:focus {
+    outline-color: #00796B;
+}
+
+.contato form fieldset {
+    margin: 15px 0;
+    border-color: #fff;
+}
+
+.contato form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contato form label {
+    margin: 10px 0 5px;
+    display: inline-block;
+}
+
+.contato form button {
+    border: none;
+    background-color: #00796B;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.contato .info {
+    padding: 15px 30px;
+}
+
+.contato .info iframe {
+    max-width: 100%;
+    width: 700px;
+    height: 300px;
 }
 
 @keyframes flutuar {
@@ -178,4 +254,44 @@ footer p {
 
 .img-destaque {
     animation: flutuar 3s infinite;
+    width: 500px;
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+
+    section.banner .container,
+    section.introducao-sobre .container .intro {
+        flex-wrap: wrap;
+    }
+
+    section.introducao-sobre {
+        padding: 0 40px;
+    }
+
+    section.video-sobre iframe {
+        height: 400px;
+        padding: 40px;
+    }
+
+    section.banner .container .texto {
+        text-align: center;
+    }
+
+    section.banner {
+        padding: 0 40px 40px;
+    }
+
+}
+
+@media (max-width: 515px) {
+    header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header nav ul {
+        padding: 0;
+        margin: 0;
+    }
 }
