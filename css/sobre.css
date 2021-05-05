@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -12,8 +12,13 @@ body {
 }
 
 header {
+    position: fixed;
+    width: 100%;
     background-color: #00796B;
+    top: 0;
+    left: 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
 }
 
 header .container {
@@ -39,6 +44,20 @@ header nav ul li a {
     text-transform: uppercase;
 }
 
+header nav ul li a:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    transition: 0.5s;
+}
+
+header nav ul li:hover a:after {
+    width: 100%;
+}
+
+
 .container {
     width: 1200px;
     max-width: 100%;
@@ -47,6 +66,7 @@ header nav ul li a {
 
 main {
     min-height: 80vh;
+    margin-top: 150px;
 }
 
 section.banner {
@@ -104,19 +124,18 @@ section.missao-visao-valores article {
 /* SERVIÇOS */
 section.desenvolvimento .container,
 section.marketing .container,
-section.consultoria-ux .container
-{
+section.consultoria-ux .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px 0;
 }
 
-section.marketing .container{
+section.marketing .container {
     flex-direction: row-reverse;
 }
 
-main h1{
+main h1 {
     color: #00796B;
     font-size: 50px;
     text-transform: uppercase;
@@ -124,29 +143,29 @@ main h1{
 
 section.desenvolvimento .container h2,
 section.marketing .container h2,
-section.consultoria-ux .container h2{
+section.consultoria-ux .container h2 {
     color: #00796B;
 }
 
 /* CONTATO */
 
-.contato{
+.contato {
     display: flex;
     justify-content: space-between;
 }
 
 .contato form input:not([type="radio"]),
-.contato form textarea{
+.contato form textarea {
     width: 100%;
     padding: 5px;
 }
 
-.contato form label{
+.contato form label {
     margin: 10px 0 5px;
     display: inline-block;
 }
 
-.contato form button{
+.contato form button {
     border: none;
     background-color: #00796B;
     color: white;
@@ -156,32 +175,33 @@ section.consultoria-ux .container h2{
     margin: 15px 0;
 }
 
-.contato .info{
+.contato .info {
     padding: 15px 30px;
 }
 
-.contato .info iframe{
+.contato .info iframe {
     width: 700px;
     max-width: 100%;
     height: 300px;
 }
 
 
-.orcamento{
+.orcamento {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: auto;
 
 }
-.orcamento form label{
+
+.orcamento form label {
     margin: 10px 0 5px;
     display: inline-block;
 }
 
 .orcamento form input:not([type="radio"]):not([type="checkbox"]),
 .orcamento form textarea,
-.orcamento form select{
+.orcamento form select {
     width: 100%;
     padding: 10px;
 }
@@ -193,11 +213,11 @@ section.consultoria-ux .container h2{
 
 .orcamento form input:not([type="radio"]):not([type="checkbox"]):focus,
 .orcamento form textarea:focus,
-.orcamento form select:focus{
+.orcamento form select:focus {
     outline-color: #00796B;
 }
 
-.orcamento form button{
+.orcamento form button {
     border: none;
     background-color: #00796B;
     color: white;
@@ -205,4 +225,23 @@ section.consultoria-ux .container h2{
     padding: 10px;
     width: 100%;
     margin: 15px 0;
+}
+
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.img-destaque {
+    animation: flutuar 3s infinite;
 }

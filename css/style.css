@@ -11,8 +11,13 @@ body {
     color: #9B9B9B;
 }
 
+
 header {
+    position: fixed;
+    width: 100%;
     background-color: #00796B;
+    top: 0;
+    left: 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -39,6 +44,19 @@ header nav ul li a {
     text-transform: uppercase;
 }
 
+header nav ul li a:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    transition: 0.5s;
+}
+
+header nav ul li:hover a:after {
+    width: 100%;
+}
+
 .container {
     width: 1200px;
     max-width: 100%;
@@ -47,27 +65,29 @@ header nav ul li a {
 
 main {
     min-height: 80vh;
+    margin-top: 150px;
 }
 
-.cabecalho{
+.cabecalho {
     width: 1280px;
-    height:80px;
+    height: 80px;
     background-color: #00796B;
     display: flex;
-    justify-content: space-between;  
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
+.logo {
     margin-left: 41px;
 }
 
-.texto{
+.texto {
     display: block;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 }
-.container{
+
+.container {
     display: flex;
     align-content: space-between;
 }
@@ -79,7 +99,7 @@ main {
     top: 237px;
 }
 
-.texto h3{
+.texto h3 {
     width: 516px;
     height: 120px;
     left: 721px;
@@ -92,7 +112,7 @@ main {
     color: #009688;
 }
 
-.texto p{
+.texto p {
     width: 501px;
     height: 160px;
     left: 721px;
@@ -105,7 +125,22 @@ main {
     color: #9B9B9B;
 }
 
-footer{
+.btn-primary {
+    padding: 10px 30px;
+    background-color: #00796B;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.btn-primary:hover {
+    background-color: #009688;
+    color: #000;
+}
+
+footer {
     width: 100%;
     height: 85px;
     left: 0px;
@@ -116,11 +151,29 @@ footer{
     align-content: center;
 }
 
-footer p{
+footer p {
     text-align: center;
     font-family: Roboto;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
     color: #FFFFFF;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.img-destaque {
+    animation: flutuar 3s infinite;
 }
